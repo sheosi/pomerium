@@ -28,7 +28,7 @@ COPY . .
 COPY --from=ui /build/ui/dist ./ui/dist
 
 # Add an envoy that supports raspberry pi OS
-COPY --from=docker.io/thegrandpkizzle/envoy:1.25.2 /usr/local/bin/envoy pkg/envoy/files/envoy-linux-arm64
+COPY --from=docker.io/thegrandpkizzle/envoy:1.24.0 /usr/local/bin/envoy pkg/envoy/files/envoy-linux-arm64
 RUN sha256sum pkg/envoy/files/envoy-linux-arm64 > pkg/envoy/files/envoy-linux-arm64.sha256
 
 # build
